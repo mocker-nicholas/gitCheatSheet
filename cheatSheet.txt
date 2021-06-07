@@ -78,7 +78,7 @@ git clone url                     - Clones git repository at url
 git remote -v                     - Check what the remote is set to
 git remote add <name> url         - create a new remote (commonly named origin)
 git remote rename <old> <new>     - rename an existing origin
-git remote remove <name>         - remove an existing origin
+git remote remove <name>          - remove an existing origin
 git push <remote> <branch>        - push branch up to gitup (github considers master "main" now)
  
  test

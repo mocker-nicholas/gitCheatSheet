@@ -1,0 +1,95 @@
+Basics:
+cd         - change directory
+cd ..      - back out of cwd
+ls         - list files and folders in cwd
+ls -a      - see all hidden folders
+pwd        - print working directory
+touch      - create file
+mkdir      - create folder
+code .     - Open VS code with cwd
+explorer . - Open file explorer in cwd
+
+Deleting Stuff:
+rm         - deletes whatever is after it
+rm -rf     - deltes a folder. (-rf is a flag/option, all commands have these and the modify how the command behaves. rf is recursive force)
+
+Repos:
+git init                   - initializes new git repository in cwd (you only run this one time per project)
+git add                    - add a file or other changes to the staging area ("git add ." will add all chages to staging area)
+git commit                 - dont ever use this. Youll end up in VIM
+git commit -a -m "message" - Add and commit all changes with a message
+git commit -m "my message" - This way is better. It lets us add our commit message within the terminal. 
+git log                    - view all of the commits for the repository you are in (hit q to exit the less program, which makes the git log scrollable);
+git log --oneline          - allows you to view the log with only one line of log notes per commit.
+git --amend                - create a new commit to amend the previous one. This only works on the previous commit.
+git config --global core.editor "code --wait" - Change default commit editor from VIM to VS code. 
+
+Branches:
+git branch                   - View the current branches (active branch marked by astrisc *)
+git branch <branchname>      - Makes a new branch for us, it is based off of the head. 
+git switch <branchname>      - Switch Branches
+git switch -c <branchname>   - Creates a branch and switches you to the branch.
+git checkout -b <branchname> - Does the same as above 
+git branch -d <branchname>   - Deletes a branch. Does not work on current head or unmerged branches.
+git branch -D <branchname>   - Deletes a branch. The capital D is basically --force. Doesnt matter if the branch is merged. 
+git branch -m <branchname>   - Changes current branch name (m technically stands for move)
+
+Merging:
+git branch -v              - List branches with a bit more detail
+git merge <branchname>     - Merge into current HEAD branch
+
+Checking Differences:
+git diff                     - Shows all changes in cwd NOT staged for the next commit
+git diff HEAD                - Shows all changes in cwd HEAD. Shows staged and unstaged changes.
+git diff HEAD [filename]
+git diff --staged            - Shows all changes in staging area
+git diff --staged [filename]
+git diff --cached                      - Shows all changes in staging area
+git diff branch1..branch2              - Shows all changes between two branches
+git diff branch1..branch2 [filename]
+git diff commit1..commit2              - Compare diff between commits
+git diff commit1..commit2 [filename]
+
+Stashing: 
+git stash                 - saves changes on the current branch without making a commit
+git stash pop             - removes the most recent stash changes and re apply them to your working copy. 
+git stash apply           - applies stashed changed to current branch, and keeps them in the stash. 
+git stash list            - shows all of your stashes on the stash stack
+git stash clear           - clears stash list
+git stash apply stash@{#} - apply this number is stash list to current branch
+git stash drop stash@{#}  - drops this number of stash from stash stack
+
+Time Traveling:
+git checkout <hash>                    - Brings you into a detached head state, points head at the commit you travel to. (switch to branch to get out of detached head mode)
+git checkout HEAD~1                    - Brings you to one commit before the current HEAD. Moves HEAD position
+git switch -                           - Brings you back to whatever branch you were one before moving
+git checkout HEAD <file>               - Discard unstaged changes on file
+git checkout -- <files>                - Discard unstaged changes on list of files
+git restore <filename>                 - Discard unstaged changes on file
+git restore --source HEAD~2 <filename> - Discard changes back to a certain commit
+git restore <filename>                 - Bring changes back to where they were at most recent HEAD
+git restore --staged <filename>        - Unstages file
+git reset <commit-hash>                - remove commit (changes remains in local files), useful to move a commit to another branch
+git reset --hard <commit-hash>         - removes commit and the changes associated with it in local files. 
+git revert <commit-hash>               - Keep a record of the commit, but undo the changes associated with it.
+                                         * use revert if mutiple people are on your project. Or everyone else will have a record you dont have
+Git Hub:
+git clone url                     - Clones git repository at url
+git remote -v                     - Check what the remote is set to
+git remote add <name> url         - create a new remote (commonly named origin)
+git remote rename <old> <new>     - rename an existing origin
+git remote remove <name>         - remove an existing origin
+git push <remote> <branch>        - push branch up to gitup (github considers master "main" now)
+ 
+ test
+
+
+
+
+
+
+
+
+
+
+
